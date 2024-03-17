@@ -1,0 +1,38 @@
+{% extends 'home.html' %}
+{% block content %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Settings</title>
+</head>
+<body>
+    <form action="" method="post">
+        {% csrf_token %}
+        <label for="first_name">First_name</label>
+        <input id="first_name" type="text" value="{{user.first_name}}" name = "first_name"><br><br>
+        
+        <label for="last_name">Last_name</label>
+        <input id="last_name" type="text" value="{{user.last_name}}" name = "last_name"><br><br>
+
+        <label for="email">Email</label>
+        <input id="email" type="email" value="{{user.email}}" name = "email"><br><br>
+
+        <label for="username">Username</label>
+        <input id="username" type="text" value="{{user.username}}" name = "username"><br><br>
+
+        <p>Agar old password va new passwordni kiritsangiz ular o'zgaradi aks holda o'zgarmaydi</p>
+        
+        <label for="password">Old password</label>
+        <input id="password" type="password" placeholder="old password" name = "password"><br><br>
+
+        <label for="new-password">New password</label>
+        <input id="new-password" type="password" placeholder="new password" name = "new_password"><br><br>
+        
+        <button type="submit">Submit</button>
+    </form>
+    
+</body>
+</html>
+{% endblock %}

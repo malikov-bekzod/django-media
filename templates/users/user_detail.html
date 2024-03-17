@@ -1,0 +1,21 @@
+{% extends 'home.html' %}
+{% block content %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>{{user.first_name}}</title>
+</head>
+<body>
+    <p><strong>First_name:</strong> {{user.first_name}}</p>
+    <p><strong>Last_name:</strong> {{user.last_name}}</p>
+    <p><strong>Username:</strong> {{user.username}}</p>
+    <p><strong>Password:</strong> ******* </p>
+
+    <form action="">
+        <a href="{% url 'user-settings' user.id %}"><button type="button">Settings</button></a>
+    </form>
+</body>
+</html>
+{% endblock %}
